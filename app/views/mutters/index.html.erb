@@ -1,0 +1,11 @@
+<p><%= notice %></p>
+
+<h1>つぶやき一覧</h1>
+
+<% @mutters.each do |mutter| %>
+  <p>本文:<%= mutter.content %></p>
+  <%= link_to "つぶやきを編集する", edit_mutter_path(mutter.id), data: { confirm: '本当に編集していいですか？' } %>
+  <%= link_to 'ブログを削除する', mutter_path(mutter.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %>
+<% end %>
+
+<%= link_to "つぶやく", new_mutter_path %>
