@@ -46,3 +46,5 @@ end
 gem 'rails_12factor', group: :production
 
 gem 'rails-i18n'
+
+gem 'twitter-bootstrap-rails'

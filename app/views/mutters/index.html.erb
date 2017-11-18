@@ -1,11 +1,15 @@
-<p><%= notice %></p>
-
-<h1>つぶやき一覧</h1>
-
-<% @mutters.each do |mutter| %>
-  <p>本文:<%= mutter.content %></p>
-  <%= link_to "つぶやきを編集する", edit_mutter_path(mutter.id), data: { confirm: '本当に編集していいですか？' } %>
-  <%= link_to 'ブログを削除する', mutter_path(mutter.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %>
-<% end %>
-
-<%= link_to "つぶやく", new_mutter_path %>
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <p><%= notice %></p>
+    <h1つぶやき一覧</h1>
+      <%= link_to "つぶやく", new_mutter_path, class: 'btn btn-default' %>
+    <% @mutters.each do |mutter| %>
+    <div class="row">
+      <h4><%= mutter.content %></h4>
+      <p></p>
+      <%= link_to "編集", edit_mutter_path(mutter.id), class: 'btn btn-sm btn-success' %>
+      <%= link_to "削除", mutter_path(mutter.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-sm btn-danger' %>
+    </div>
+    <% end %>
+  </div>
+</div>
